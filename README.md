@@ -404,9 +404,25 @@ Ordering will mess up the select and accessibility i.e. the order in which the s
 
 [See Live]()
 
+Fully responsive without media queries.
+
+Each album `div` consists of
+
+- artwork `img`
+- album details `div`
+  - album title `h2`
+  - artist name `p`
+  - album description `p`
+
+Here `.albums` is the grid container and `.album` items are the grid items.
+
+But, we can make each `.album` item a grid container also - nested grids
+
 ## CSS Grid Image Gallery
 
 [See Live]()
+
+An image gallery based on `grid-auto-flow: dense` and with a image overlay when an image in the gallery is clicked.
 
 ## Flexbox vs CSS Grid
 

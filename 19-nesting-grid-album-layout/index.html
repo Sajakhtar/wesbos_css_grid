@@ -102,16 +102,33 @@
 
 
     /* Grid Container */
-    .container {
-      /* display:grid; */
-      /* grid-gap: 20px; */
-      /* grid-template-columns: repeat(10, 1fr); */
+    .albums {
+      display:grid;
+      grid-gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
 
     /* Grid Items */
+    .album {
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      color: white;
+      font-weight: 100;
 
+      /* Nested Grid Container */
+      display:grid;
+      grid-template-columns: 150px 1fr;
+      grid-gap: 10px;
+      align-items: center;
 
+    }
+
+    /*Need to size images to fit available space i.e the grid column */
+    .album__artwork {
+      width: 100%; 
+    }
 
 
   </style>
