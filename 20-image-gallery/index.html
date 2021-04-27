@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../assets/style.css">
+  <!-- <link rel="stylesheet" href="../assets/style.css"> -->
   <title>CSS Grid Image Gallery</title>
 </head>
 
@@ -51,13 +51,98 @@
 
     .close {
       background: none;
-      color: white;
+      color: black;
       border: 0;
     }
 
-    .gallery {}
+    /* Grid Container */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 100px);
+      grid-auto-rows: 100px;
+      grid-auto-flow: dense;
+    }
+
+    .item {
+      overflow: hidden;
+
+      /* Nested Grid Container 1x1 grid*/
+      display: grid;
+      grid-template-columns: 1;
+      grid-template-rows: 1;
+    }
+
+    /* Grid Items */
+    .item.v2 {
+      grid-row: span 2;
+    }
+
+    .item.v3 {
+      grid-row: span 3;
+    }
+
+    .item.v4 {
+      grid-row: span 4;
+    }
+
+    .item.h2 {
+      grid-column: span 2;
+    }
+
+    .item.h3 {
+      grid-column: span 3;
+    }
+
+    .item.h4 {
+      grid-column: span 4;
+    }
+
+    /* Nested Grid Items */
+    .item img {
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item__overlay {
+      background: #ffc60032; /* #ffc600 is yellow, 32 is hex for 70% transparent*/
+      /*.item__overlay must overlap .item img*/
+      grid-column: 1 / -1;
+      grid-row: 1 / -1;
+      position: relative;
+
+      /* Nested Nested Grid to center view button*/
+      display: grid;
+      justify-items: center;
+      align-items: center;
+
+      /* hide button */
+      transition: 0.5s;
+      transform: translateY(100%)
+    }
+
+    .item:hover .item__overlay{
+      transform: translateY(0)
+
+    }
 
 
+    /* Nested Nested Grid Items */
+    .item__overlay button {
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid white;
+      color: white;
+      text-transform: uppercase;
+    }
+
+
+
+
+
+
+    /* other CSS */
 
     .overlay {
       position: fixed;
@@ -72,9 +157,11 @@
 
     .overlay.open {
       display: grid;
+      align-items: center;
+      justify-content: center;
     }
 
-    .overlay figure {
+    .overlay-inner {
       background: white;
       width: 700px;
       padding: 20px;
@@ -85,15 +172,82 @@
     }
 
 
-    /* Grid Container */
-
-
-
-    /* Grid Items */
-
-
-
   </style>
+
+  <!-- Javascript to generate images tags -->
+  <script>
+
+    // select gallery, overlay, overlay image, overlay close
+    const gallery = document.querySelector('.gallery');
+    const overlay = document.querySelector('.overlay');
+    const overlayImage =  overlay.querySelector('img');
+    const overlayClose =  overlay.querySelector('.close');
+
+    // Function to generate HTML based on passed in Width (horizonal span cols) & height (veritical span rows) to generate img and overlay
+    function generateHTML([h, v]) {
+      return `
+        <div class="item h${h} v${v}">
+          <img src="images/${randomNumber(12)}.jpg">
+          <div class="item__overlay">
+            <button>View →</button>
+          </div>
+        </div>
+      `;
+    }
+
+    // helper function to pic random number between 1 and a limit
+    function randomNumber(limit) {
+      return Math.floor(Math.random() * limit) + 1;
+    }
+
+    // helper function to show overlay when an item is clicked
+    function handleClick(e) {
+      // console.log(e.currentTarget);
+      
+      // get the src of image clicked
+      const src = e.currentTarget.querySelector('img').src;
+      // console.log(src);
+
+      // set the src of the overlayImage
+      overlayImage.src = src;
+
+      // open overlay function
+      open();
+    }
+
+    // helper functions to open/ close the overlay
+    function open() {
+      overlay.classList.add('open');
+    }
+
+    function close() {
+      overlay.classList.remove('open');
+    }
+
+    // Generate 50 images to put on screen
+    // Array of arrays [[h,v], [h,v], [h,v]] to state how many cols and rows to span for a given img
+    // empty array with 50 random numbers between 1 to 4
+    // concatenate array with some [1, 1] to create images that span one col and one row as filler images
+    const digits = Array.from({ length: 50 }, () => [randomNumber(4), randomNumber(4)]).concat([[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1],[1,1]]);
+    // console.log(digits);
+
+    const html = digits.map(generateHTML).join('');
+    // console.log(html);
+
+    // Set html in the gallery
+    gallery.innerHTML = html;
+
+    // Event listner for items that are clicked to show the overlay
+    const items = document.querySelectorAll('.item')
+
+    items.forEach(item => item.addEventListener('click', handleClick));
+
+
+    // Event listner for overlay close click
+    overlayClose.addEventListener('click', close);
+
+
+  </script>
 
 </body>
 

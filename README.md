@@ -424,21 +424,95 @@ But, we can make each `.album` item a grid container also - nested grids
 
 An image gallery based on `grid-auto-flow: dense` and with a image overlay when an image in the gallery is clicked.
 
+JavasScript is used to programmatically populate the HTML with 50+ image spanding upto 4 rows and 4 columns of the grid. In addition, we append a few images that span only 1 row and 1 column, to fill in the gaps in the dense grid.
+
+Some JavaScript event listners are used to create an overlay when and is image is clicked and to close it the overlay.
+
 ## Flexbox vs CSS Grid
 
-[See Live]()
+Here we go through a few design pattern examples for CSS Grid and Flexbox.
+
+In general Grid can do everything that Flexbox can do.
+
+One benefit of Flexbox over grid is that they can be transitioned i.e. animate a `flow-grow` value.
+In Grid we can only transition `grid-gap`.
+
+Grid is much more consistent across browsers with few bugs.
+It's east to add more rows with Grid, even if you're starting with only a single axis.
+
+We'd probably be using Grid more than Flexbox in the future.
+
+Examples
+
+- [Axis flipping]()
+  - in Flexbox you have the ability to flip the axis from column to row
+  - in Grid, `grid-template-columns: 1fr` will flip from column to row
+  - Flexbox has the ability to reverse rows and columns, in Grid you would have to use the `order` property but that would be tedious
+- [Controls on the right]()
+  - use `grid-auto-flow: column` to add elements as new columns rather than rows
+- [Flex on item]()
+  - example for media controls for a video player
+  - have the buttons take up as much space as they need, then remaining space will be taken up by the progress bar
+  - Flexbox in this case is better
+- [Perfectly centered]()
+  - In Flexbox, use `justify-content` and `align-items` with `flex-direction: column`
+  - In Grid, use `justify-items` and `align-content`
+- [Self control]()
+  - aligning items in all 4 corners, only possible in Grid, given that we have `justify-self`, as well as `align-self` that we can use on grid items
+- [Stacked layout]()
+  - Only possibl in Flexbox
+  - Grid columns are rigid, so you'd need to do manual spanning for each grid item
+  - However, there is no concept of flex-gap in Flexbox and using margins on Flex items is not ideal, as it leads to unintended margin on left and right, then you have to use negative margin to remove that - not ideal
+- [Unknown content size]()
+  - If you know how many columns you have but don't know how wide items are and want to place it in the middle, then set the column widths to `auto` and use `justify-content: center`
+- [Uknown number of items]()
+  - use `repeat(auto-fit, minmax(50px, 1fr))`
+  - `auto-fit` will ensure the items that do exist, fill the width of the grid container
+- [Variable widths each row]()
+  - Flexbox is a better use case, since the columns are rigid in Grid unless you manually span each grid item
 
 ## Recreating Codepen
 
 [See Live]()
 
+Creating an applicaiton with multiple window and scrolling, where these windows need to fit inside the viewport. Codepen is a great example of this.
+
+THe HTML has four main parts
+
+- Grid container: codepen
+- Grid items:
+  - pen (header)
+  - code
+  - preview
+  - settings (footer)
+- Then each grid item is a nested grid
+
 ## Bootstrappy Grid with CSS Variables
 
 [See Live]()
 
+Grid by nature is flexible and responsive, while Bootstrap grid is rigid with 12 columns.
+
+However, there are still valid cases for having a rigid grid system with equal sized columns.
+
+Then we can use inline style for the span e.g.
+
+```css
+<div class="item" style="--span: 3">2</div>
+```
+
 ## Responsive Website
 
 [See Live]()
+
+A responsive page consisting of
+
+- hero image
+- call to actions
+- navigation
+- columns for features
+- feature spotlight
+- image gallery e.g. from social posts
 
 ## Full Bleed Blog Layout
 
