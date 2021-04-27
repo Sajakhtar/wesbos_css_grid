@@ -102,6 +102,24 @@
   </div>
 
   <script>
+
+    // Collapse navigation into Menu button
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      // console.log("toggle");
+      // console.log(target);
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      // console.log(expanded);
+
+      // set expanded attribute to true
+      navButton.setAttribute('aria-expanded', !expanded);
+
+
+    }
+
+    navButton.addEventListener('click', toggleNav);
+
   </script>
   
 </body>
