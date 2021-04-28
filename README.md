@@ -2,7 +2,7 @@
 
 [Wes Bos](https://wesbos.com/) [CSS Grid Course](https://cssgrid.io/)
 
-1. [Start Files and Tooling Setup](#starter-files-and-tooling-files)
+1. [Starter Files and Tooling Setup](#starter-files-and-tooling-setup)
 1. [CSS Grid Fundamentals](#css-grid-fundamentals)
 1. [CSS Grid Dev Tools](#css-grid-dev-tools)
 1. [CSS Grid Implicit vs Explicit Tracks](#css-grid-implicit-vs-explicit-tracks)
@@ -18,19 +18,19 @@
 1. [Area Line Names](#area-line-names)
 1. [Naming Lines in CSS Grid](#naming-lines-in-css-grid)
 1. [grid-auto-flow dense Block Fitting](#grid-auto-flow-dense-block-fitting)
-1. [CSS Grid Alignment and Centering](#css-grid-aligment-and-centering)
+1. [CSS Grid Alignment and Centering](#css-grid-alignment-and-centering)
 1. [Reordering Grid Items](#reordering-grid-items)
 1. [Nesting Grid with Album Layouts](#nesting-grid-with-album-layouts)
 1. [CSS Grid Image Gallery](#css-grid-image-gallery)
 1. [Flexbox vs CSS Grid](#flexbox-vs-css-grid)
-1. [Recreating Codepen](#recreasting-codepen)
+1. [Recreating Codepen](#recreating-codepen)
 1. [Bootstrappy Grid with CSS Variables](#bootstrappy-grid-with-css-variables)
 1. [Responsive Website](#responsive-website)
 1. [Full Bleed Blog Layout](#full-bleed-blog-layout)
 
-## Start Files and Tooling Setup
+## Starter Files and Tooling Setup
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/00-starter-files)
 
 [Start files](https://github.com/wesbos/css-grid) available on Github.
 
@@ -54,7 +54,7 @@ npm start
 
 ## CSS Grid Fundamentals
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/02-css-grid-fundamentals)
 
 `display: grid`on a `div` opens up the ability to slide and dice that `div` in to a grid, where we can place any child items anywhere on that grid within the columns and rows, collectively known as tracks.
 
@@ -66,7 +66,7 @@ For the grid to take effect, we need to define the columsns and rows using `grid
 
 ## CSS Grid Dev Tools
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/03-dev-tools)
 
 CSS Grid is difficult to visualize.
 
@@ -92,7 +92,7 @@ The dotted lines are the implicit track i.e. implied part of the grid in the cas
 
 ## CSS Grid Implicit vs Explicit Tracks
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/04-implicit-vs-explicit-tracks)
 
 Defining the columns means they're on explicit tracks, then CSS grid will wrap elements on to row if it runs out of space. In this case the rows are not defined and so the rows are on implicit tracks.
 
@@ -108,7 +108,7 @@ There is also `grid-auto-columns`, though we will use `grid-auto-flow` to manage
 
 ## CSS grid-auto-flow
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/05-grid-auto-flow)
 
 `grid-auto-flow` determines if your new elements are added a rows or as columns. It's not something that would be used much.
 
@@ -124,7 +124,7 @@ In Flexbox we can achieve a similar thing using `flex-direction` to be left to r
 
 ## Sizing Tracks
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/06-sizing-tracks)
 
 So far we've used `px` to size columns using `grid-template-columns` and we can also use percentages `%`.
 
@@ -144,7 +144,7 @@ Since the height of the elements depends on it's contents, `grid-template-rows: 
 
 ## CSS Grid repeat function
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/07-repeat-function)
 
 The repeat function takes 2 inputs:
 
@@ -159,7 +159,7 @@ The `repeat` function can be used anywhere inside `grid-template-columns` or `gr
 
 ## Sizing Grid Items
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/08-sizing-grid-items)
 
 We can size grid items that are within the grid container e.g. give an item a width, where that items width will define the width of the colum that item is in. Then the remaining columns will be divide the free space (or via any other criteria at the grid container level or width at the grid item level).
 
@@ -177,7 +177,7 @@ This really shows the power of CSS Grid, as we're not using floats or absolute p
 
 ## Placing Grid Items
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/09-placing-grid-items)
 
 Getting the items to actually go where we want can be achieved by specifying the underlying parameters of `grid-column` i.e. `grid-column-start: 2` and `grid-column-end: 5` giving them a track number to start and end at. The short-hand version is `grid-column: 2 / 5`.
 
@@ -193,11 +193,13 @@ If you specify `grid-column: 1 / -1` and `grid-row: 1 / -1` for a grid element, 
 
 ## Spanning and Placing Cardio
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/10-spanning-and-placing-cardio)
+
+Practicing placing grid items.
 
 ## auto-fit and auto-fill
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/11-auto-fit-and-auto-fill)
 
 `auto-fit`, `auto-fill` and `minmax()` are the most used parts of CSS Grid.
 
@@ -211,7 +213,7 @@ How do you know which one you want? Try one and if it's not the one that you wan
 
 ## Using minmax() for responsive grids
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/12-minmax-for-responsive-grids)
 
 The combination of using `auto-fit`, `auto-fill` and `minmax()` replaces the need for media queries, as these grid features make the page responsive by nature.
 
@@ -231,7 +233,7 @@ So `grid-template-columns: auto 150px 150px 150px` becomes `grid-template-column
 
 ## Grid Template Areas
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/13-grid-template-areas)
 
 We can place items based on grid areas by giving names to specific areas of our grid.
 
@@ -261,7 +263,7 @@ grid-template-areas:
 
 ## Area Line Names
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/14-area-line-names)
 
 When you create grid areas, you also get line names for free.
 
@@ -271,7 +273,7 @@ e.g. `grid-column: 💩-start / 💩-end;`
 
 ## Naming Lines in CSS Grid
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/15-naming-lines)
 
 It's possible to name the lines, though we don't need to name lines since they're available with `-start` and `-end`, once we define areas.
 
@@ -293,7 +295,7 @@ Unufortunately, the Dev Tools don't show the names of the lines.
 
 ## grid-auto-flow dense Block Fitting
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/16-grid-auto-flow-dense-block-fitting)
 
 When you have more items than can fit in the grid, by default the items will wrap onto the next line and create a new implicit row (or column if `grid-auto-flow: column` is specified).
 
@@ -307,7 +309,7 @@ Sometimes you will have gaps, simply because there may not be an item to fill th
 
 ## CSS Grid Alignment and Centering
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/17-alignment-and-centering)
 
 It's difficult to center things using CSS, while Flexbox made that easier, CSS Grid makes it easier again.
 
@@ -392,6 +394,8 @@ align-items: center;
 
 ## Reordering Grid Items
 
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/18-reordering-grid-items)
+
 You can give your items an `order` property.
 
 The `order` peroperty is useful in media queries.
@@ -402,7 +406,7 @@ Ordering will mess up the select and accessibility i.e. the order in which the s
 
 ## Nesting Grid with Album Layouts
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/19-nesting-grid-album-layout)
 
 Fully responsive without media queries.
 
@@ -420,7 +424,7 @@ But, we can make each `.album` item a grid container also - nested grids
 
 ## CSS Grid Image Gallery
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/20-image-gallery)
 
 An image gallery based on `grid-auto-flow: dense` and with a image overlay when an image in the gallery is clicked.
 
@@ -444,36 +448,36 @@ We'd probably be using Grid more than Flexbox in the future.
 
 Examples
 
-- [Axis flipping]()
+- [Axis flipping](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/axis-flipping.html)
   - in Flexbox you have the ability to flip the axis from column to row
   - in Grid, `grid-template-columns: 1fr` will flip from column to row
   - Flexbox has the ability to reverse rows and columns, in Grid you would have to use the `order` property but that would be tedious
-- [Controls on the right]()
+- [Controls on the right](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/controls-on-right.html)
   - use `grid-auto-flow: column` to add elements as new columns rather than rows
-- [Flex on item]()
+- [Flex on item](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/flex-on-item.html)
   - example for media controls for a video player
   - have the buttons take up as much space as they need, then remaining space will be taken up by the progress bar
   - Flexbox in this case is better
-- [Perfectly centered]()
+- [Perfectly centered](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/perfectly-centered.html)
   - In Flexbox, use `justify-content` and `align-items` with `flex-direction: column`
   - In Grid, use `justify-items` and `align-content`
-- [Self control]()
+- [Self control](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/self-control.html)
   - aligning items in all 4 corners, only possible in Grid, given that we have `justify-self`, as well as `align-self` that we can use on grid items
-- [Stacked layout]()
+- [Stacked layout](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/stacked-layout.html)
   - Only possibl in Flexbox
   - Grid columns are rigid, so you'd need to do manual spanning for each grid item
   - However, there is no concept of flex-gap in Flexbox and using margins on Flex items is not ideal, as it leads to unintended margin on left and right, then you have to use negative margin to remove that - not ideal
-- [Unknown content size]()
+- [Unknown content size](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/unknown-content-size.html)
   - If you know how many columns you have but don't know how wide items are and want to place it in the middle, then set the column widths to `auto` and use `justify-content: center`
-- [Uknown number of items]()
+- [Uknown number of items](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/unknown-number-of-items.html)
   - use `repeat(auto-fit, minmax(50px, 1fr))`
   - `auto-fit` will ensure the items that do exist, fill the width of the grid container
-- [Variable widths each row]()
+- [Variable widths each row](https://sajakhtar.github.io/wesbos_css_grid/21-flexbox-vs-css-grid/variable-widths-each-row.html)
   - Flexbox is a better use case, since the columns are rigid in Grid unless you manually span each grid item
 
 ## Recreating Codepen
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/22-recreating-codepen)
 
 Creating an applicaiton with multiple window and scrolling, where these windows need to fit inside the viewport. Codepen is a great example of this.
 
@@ -489,7 +493,7 @@ THe HTML has four main parts
 
 ## Bootstrappy Grid with CSS Variables
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/23-bootstrappy-grid-with-css-variables)
 
 Grid by nature is flexible and responsive, while Bootstrap grid is rigid with 12 columns.
 
@@ -503,7 +507,7 @@ Then we can use inline style for the span e.g.
 
 ## Responsive Website
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/24-responsive-website)
 
 A responsive page consisting of
 
@@ -516,7 +520,7 @@ A responsive page consisting of
 
 ## Full Bleed Blog Layout
 
-[See Live]()
+[See Live](https://sajakhtar.github.io/wesbos_css_grid/25-full-bleed-blog-layout)
 
 CSS Grid is also good for laying out text.
 
