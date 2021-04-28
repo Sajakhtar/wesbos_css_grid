@@ -509,7 +509,7 @@ A responsive page consisting of
 
 - hero image
 - call to actions
-- navigation
+- navigation - collapes into a menu button for smaller screen width
 - columns for features
 - feature spotlight
 - image gallery e.g. from social posts
@@ -517,3 +517,7 @@ A responsive page consisting of
 ## Full Bleed Blog Layout
 
 [See Live]()
+
+CSS Grid is also good for laying out text.
+
+In this case we have the main content, images, blockquotes, and `tip` text for the left/ right margin of the blog.
